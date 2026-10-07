@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Work | Samia Fathima</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+
+    <style>
+
+        /* =========================================================
+           MY WORK PAGE
+        ========================================================= */
+
+        .my-work-page {
+            background: #1f4934;
+        }
+
+
+        /* =========================================================
+           HERO / FIRST SECTION
+        ========================================================= */
+
+        .my-work-hero {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 50px 9% 52px;
+
+            background:
+                radial-gradient(
+                    circle at 88% 20%,
+                    rgba(82, 113, 93, 0.16),
+                    transparent 28%
+                ),
+                #d5e5d8;
+
+            color: #153b2b;
+
+            border-bottom: 1px solid rgba(21, 59, 43, 0.12);
+        }
+
+
+        /* subtle editorial circle */
+
+        .my-work-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 310px;
+            height: 310px;
+
+            right: -125px;
+            top: -155px;
+
+            border: 1px solid rgba(21, 59, 43, 0.13);
+
+            border-radius: 50%;
+        }
+
+
+        /* small vertical detail */
+
+        .my-work-hero::after {
+            content: "";
+
+            position: absolute;
+
+            right: 9%;
+            bottom: 52px;
+
+            width: 1px;
+            height: 62px;
+
+            background: rgba(21, 59, 43, 0.20);
+        }
+
+
+        /* =========================================================
+           BACK TO HOME
+        ========================================================= */
+
+        .my-work-back {
+            position: relative;
+
+            z-index: 2;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            margin-bottom: 38px;
+
+            color: #153b2b;
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            text-decoration: none;
+
+            transition: opacity 0.3s ease;
+        }
+
+
+        .my-work-back:hover {
+            opacity: 0.55;
+        }
+
+
+        /* =========================================================
+           PORTFOLIO LABEL
+        ========================================================= */
+
+        .my-work-label {
+            position: relative;
+
+            z-index: 2;
+
+            margin: 0 0 14px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            color: #52715d;
+        }
+
+
+        /* =========================================================
+           MY WORK TITLE
+        ========================================================= */
+
+        .my-work-hero h1 {
+            position: relative;
+
+            z-index: 2;
+
+            margin: 0 0 17px;
+
+            font-size: clamp(58px, 7vw, 84px);
+
+            line-height: 0.92;
+
+            font-weight: 500;
+
+            letter-spacing: -4px;
+
+            color: #153b2b;
+        }
+
+
+        /* =========================================================
+           DESCRIPTION
+        ========================================================= */
+
+        .my-work-description {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 680px;
+
+            margin: 0 0 19px;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            color: #3d5b47;
+        }
+
+
+        /* =========================================================
+           HERO TOOLS
+        ========================================================= */
+
+        .my-work-tools {
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            margin: 0;
+        }
+
+
+        .my-work-tools span {
+            font-size: 10px;
+
+            letter-spacing: 0.4px;
+
+            color: #315541;
+        }
+
+
+        .my-work-tools span:not(:last-child)::after {
+            content: "|";
+
+            margin: 0 10px;
+
+            color: #789683;
+        }
+
+
+        /* =========================================================
+           PROJECT SECTION
+        ========================================================= */
+
+        .my-work-projects {
+            position: relative;
+
+            padding: 5px 9% 80px;
+
+            background: #1f4934;
+
+            color: #f4f7f2;
+        }
+
+
+        /* =========================================================
+           PROJECT ROW
+        ========================================================= */
+
+        .my-work-project {
+            display: grid;
+
+            grid-template-columns: 380px minmax(0, 1fr);
+
+            align-items: center;
+
+            column-gap: 75px;
+
+            padding: 55px 0;
+
+            border-top: 1px solid rgba(244, 247, 242, 0.13);
+        }
+
+
+        .my-work-project:first-child {
+            border-top: none;
+
+            padding-top: 40px;
+        }
+
+
+        .my-work-project:last-child {
+            border-bottom: 1px solid rgba(244, 247, 242, 0.13);
+        }
+
+
+        /* =========================================================
+           IMAGE — ONLY THE ACTUAL IMAGE
+        ========================================================= */
+
+        .my-work-image {
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+            padding: 0;
+
+            margin: 0;
+
+            background: transparent;
+
+            border: none;
+
+            border-radius: 0;
+
+            box-shadow: none;
+
+            overflow: visible;
+
+            transition: transform 0.35s ease;
+        }
+
+
+        .my-work-image img {
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+
+            max-height: 225px;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+
+            box-shadow: none;
+
+            transition: transform 0.35s ease;
+        }
+
+
+        .my-work-project:hover .my-work-image {
+            transform: translateY(-3px);
+        }
+
+
+        .my-work-project:hover .my-work-image img {
+            transform: scale(1.01);
+        }
+
+
+        /* =========================================================
+           PROJECT CONTENT
+        ========================================================= */
+
+        .my-work-content {
+            max-width: 620px;
+        }
+
+
+        .my-work-content h2 {
+            margin: 0 0 14px;
+
+            font-size: 31px;
+
+            line-height: 1.12;
+
+            font-weight: 500;
+
+            letter-spacing: -1.2px;
+
+            color: #f4f7f2;
+        }
+
+
+        .my-work-content p {
+            max-width: 560px;
+
+            margin: 0 0 20px;
+
+            font-size: 13px;
+
+            line-height: 1.75;
+
+            color: #d5e2d8;
+        }
+
+
+        /* =========================================================
+           PROJECT TOOLS
+        ========================================================= */
+
+        .my-work-project-tools {
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            margin: 0 0 23px;
+        }
+
+
+        .my-work-project-tools span {
+            font-size: 10px;
+
+            letter-spacing: 0.35px;
+
+            color: #aec8b5;
+        }
+
+
+        .my-work-project-tools span:not(:last-child)::after {
+            content: "|";
+
+            margin: 0 10px;
+
+            color: #6f927c;
+        }
+
+
+        /* =========================================================
+           VIEW PROJECT
+        ========================================================= */
+
+        .my-work-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding-bottom: 5px;
+
+            border-bottom: 1px solid rgba(244, 247, 242, 0.45);
+
+            color: #f4f7f2;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.35px;
+
+            text-decoration: none;
+
+            transition:
+                gap 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .my-work-link span {
+            font-size: 16px;
+
+            line-height: 1;
+        }
+
+
+        .my-work-link:hover {
+            gap: 15px;
+
+            border-color: #f4f7f2;
+        }
+
+
+        /* =========================================================
+           BOTTOM BACK LINK
+        ========================================================= */
+
+        .my-work-bottom {
+            padding: 0 9% 70px;
+
+            background: #1f4934;
+        }
+
+
+        .my-work-bottom a {
+            color: #cbded0;
+
+            font-size: 11px;
+
+            text-decoration: none;
+
+            transition: opacity 0.3s ease;
+        }
+
+
+        .my-work-bottom a:hover {
+            opacity: 0.55;
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .my-work-project {
+                grid-template-columns: 330px minmax(0, 1fr);
+
+                column-gap: 45px;
+            }
+
+
+            .my-work-image img {
+                max-height: 195px;
+            }
+
+
+            .my-work-content h2 {
+                font-size: 27px;
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 750px) {
+
+            .my-work-hero {
+                padding: 43px 7% 45px;
+            }
+
+
+            .my-work-hero::after {
+                display: none;
+            }
+
+
+            .my-work-projects {
+                padding: 5px 7% 60px;
+            }
+
+
+            .my-work-project {
+                grid-template-columns: 1fr;
+
+                gap: 27px;
+
+                padding: 43px 0;
+            }
+
+
+            .my-work-project:first-child {
+                padding-top: 32px;
+            }
+
+
+            .my-work-image {
+                width: min(100%, 470px);
+            }
+
+
+            .my-work-image img {
+                max-height: none;
+
+                width: 100%;
+            }
+
+
+            .my-work-content {
+                max-width: 650px;
+            }
+
+
+            .my-work-content h2 {
+                font-size: 29px;
+            }
+
+
+            .my-work-bottom {
+                padding: 0 7% 55px;
+            }
+
+        }
+
+
+        /* =========================================================
+           SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 500px) {
+
+            .my-work-hero {
+                padding: 37px 7% 40px;
+            }
+
+
+            .my-work-back {
+                margin-bottom: 31px;
+            }
+
+
+            .my-work-hero h1 {
+                font-size: 53px;
+
+                letter-spacing: -3px;
+            }
+
+
+            .my-work-description {
+                font-size: 13px;
+
+                line-height: 1.7;
+            }
+
+
+            .my-work-projects {
+                padding: 0 7% 55px;
+            }
+
+
+            .my-work-project {
+                padding: 37px 0;
+
+                gap: 22px;
+            }
+
+
+            .my-work-image {
+                width: 100%;
+            }
+
+
+            .my-work-content h2 {
+                font-size: 26px;
+            }
+
+
+            .my-work-content p {
+                font-size: 12.5px;
+
+                line-height: 1.7;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="my-work-page">
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <header class="navbar">
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#services">
+                Services
+            </a>
+
+            <a href="projects.html">
+                Portfolio
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =====================================================
+             MY WORK HERO
+        ====================================================== -->
+
+        <section class="my-work-hero">
+
+            <a href="index.html" class="my-work-back">
+                ← Back to Home
+            </a>
+
+
+            <p class="my-work-label">
+                PORTFOLIO
+            </p>
+
+
+            <h1>
+                My Work
+            </h1>
+
+
+            <p class="my-work-description">
+                A curated collection of data analytics projects,
+                dashboards, and business-focused analyses showcasing
+                my ability to explore data, uncover meaningful patterns,
+                and communicate insights clearly.
+            </p>
+
+
+            <div class="my-work-tools">
+
+                <span>Power BI</span>
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Excel</span>
+                <span>DAX</span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROJECTS
+        ====================================================== -->
+
+        <section class="my-work-projects">
+
+
+            <!-- =================================================
+                 APPLE RETAIL ANALYSIS
+            ================================================== -->
+
+            <article class="my-work-project">
+
+                <div class="my-work-image">
+
+                    <img
+                        src="images/apple-retail.png"
+                        alt="Apple Retail Analysis Dashboard">
+
+                </div>
+
+
+                <div class="my-work-content">
+
+                    <h2>
+                        Apple Retail Analysis
+                    </h2>
+
+                    <p>
+                        Analyzing retail sales data to identify trends,
+                        evaluate product and store performance, and uncover
+                        sales patterns across multiple years.
+                    </p>
+
+
+                    <div class="my-work-project-tools">
+
+                        <span>Power BI</span>
+                        <span>Python</span>
+                        <span>SQL</span>
+
+                    </div>
+
+
+                    <a
+                        href="apple-retail.html"
+                        class="my-work-link">
+
+                        View Project
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 LOAN DEFAULT
+            ================================================== -->
+
+            <article class="my-work-project">
+
+                <div class="my-work-image">
+
+                    <img
+                        src="images/loan-default.png"
+                        alt="Loan Default and Financial Risk Analysis Dashboard">
+
+                </div>
+
+
+                <div class="my-work-content">
+
+                    <h2>
+                        Loan Default &amp; Financial Risk Analysis
+                    </h2>
+
+                    <p>
+                        Analyzing loan data to identify patterns in borrower
+                        behavior, assess financial risk, and understand
+                        factors associated with loan defaults.
+                    </p>
+
+
+                    <div class="my-work-project-tools">
+
+                        <span>Power BI</span>
+                        <span>SQL</span>
+                        <span>Excel</span>
+                        <span>DAX</span>
+
+                    </div>
+
+
+                    <a
+                        href="loan-default.html"
+                        class="my-work-link">
+
+                        View Project
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 DEMAND & SUPPLY
+            ================================================== -->
+
+            <article class="my-work-project">
+
+                <div class="my-work-image">
+
+                    <img
+                        src="images/demand-supply.png"
+                        alt="Demand and Supply Analysis Dashboard">
+
+                </div>
+
+
+                <div class="my-work-content">
+
+                    <h2>
+                        Demand &amp; Supply Analysis
+                    </h2>
+
+                    <p>
+                        Analyzing demand and supply patterns to evaluate
+                        availability, performance, and changes across
+                        different categories and time periods.
+                    </p>
+
+
+                    <div class="my-work-project-tools">
+
+                        <span>Power BI</span>
+                        <span>DAX</span>
+                        <span>Excel</span>
+
+                    </div>
+
+
+                    <a
+                        href="demand-supply.html"
+                        class="my-work-link">
+
+                        View Project
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 BANKING ANALYSIS
+            ================================================== -->
+
+            <article class="my-work-project">
+
+                <div class="my-work-image">
+
+                    <img
+                        src="images/banking.png"
+                        alt="Banking Analysis Dashboard">
+
+                </div>
+
+
+                <div class="my-work-content">
+
+                    <h2>
+                        Banking Analysis
+                    </h2>
+
+                    <p>
+                        Analyzing banking data to identify key patterns,
+                        performance trends, and insights that support
+                        a better understanding of business activity.
+                    </p>
+
+
+                    <div class="my-work-project-tools">
+
+                        <span>Power BI</span>
+                        <span>SQL</span>
+                        <span>Excel</span>
+
+                    </div>
+
+
+                    <a
+                        href="banking-analysis.html"
+                        class="my-work-link">
+
+                        View Project
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 MEN'S INSIGHT BI
+            ================================================== -->
+
+            <article class="my-work-project">
+
+                <div class="my-work-image">
+
+                    <img
+                        src="images/tshirt.png"
+                        alt="Men's Insight BI Dashboard">
+
+                </div>
+
+
+                <div class="my-work-content">
+
+                    <h2>
+                        Tshirts Analysis
+                    </h2>
+
+                    <p>
+                        Analyzing men's fashion data to compare brands,
+                        pricing, discounts, product variety, and
+                        profitability for business-focused insights.
+                    </p>
+
+
+                    <div class="my-work-project-tools">
+
+                        <span>Power BI</span>
+                        <span>Excel</span>
+                        <span>DAX</span>
+
+                    </div>
+
+
+                    <a
+                        href="t-shirts.html"
+                        class="my-work-link">
+
+                        View Project
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 HOUSING ANALYSIS
+            ================================================== -->
+
+            <article class="my-work-project">
+
+                <div class="my-work-image">
+
+                    <img
+                        src="images/housing.png"
+                        alt="Housing Analysis Dashboard">
+
+                </div>
+
+
+                <div class="my-work-content">
+
+                    <h2>
+                        Housing Analysis
+                    </h2>
+
+                    <p>
+                        Analyzing housing market data to explore sales
+                        performance, property characteristics, and trends
+                        across different house types.
+                    </p>
+
+
+                    <div class="my-work-project-tools">
+
+                        <span>Power BI</span>
+                        <span>Excel</span>
+                        <span>DAX</span>
+
+                    </div>
+
+
+                    <a
+                        href="housing.html"
+                        class="my-work-link">
+
+                        View Project
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 STUDENT DEPRESSION ANALYSIS
+            ================================================== -->
+
+            <article class="my-work-project">
+
+                <div class="my-work-image">
+
+                    <img
+                        src="images/student-depression.png"
+                        alt="Student Depression Analysis Dashboard">
+
+                </div>
+
+
+                <div class="my-work-content">
+
+                    <h2>
+                        Student Depression Analysis
+                    </h2>
+
+                    <p>
+                        Analyzing student data to explore patterns associated
+                        with academic, lifestyle, and demographic factors
+                        related to student well-being.
+                    </p>
+
+
+                    <div class="my-work-project-tools">
+
+                        <span>Power BI</span>
+                        <span>Python</span>
+                        <span>Excel</span>
+
+                    </div>
+
+
+                    <a
+                        href="student-depression.html"
+                        class="my-work-link">
+
+                        View Project
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             BOTTOM BACK TO HOME
+        ====================================================== -->
+
+        <div class="my-work-bottom">
+
+            <a href="index.html">
+                ← Back to Home
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
